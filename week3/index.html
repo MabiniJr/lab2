@@ -1,47 +1,68 @@
 <!DOCTYPE html>
-<html>
 <head>
-	<title>HCI Project Portfolio</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-			background-color: #f0f0f0;
-			background-image: url('tekken-8-open-graph.png');
-			background-size: cover;
-			background-position: center;
-			color: white; /* Set the text color to white */
-		}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HCI Project Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      background-image: url('tekken-8-open-graph.png');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
 
-		h1, h2, h3, p, strong {
-			color: white; /* Set the text color to white for headers, paragraphs, and strong elements */
-		}
+    h1, h2, h3, p, strong {
+      color: white;
+    }
 
-		#project1 p {
-			font-weight: bold;
-			font-size: 1.2em;
-		}
-	</style>
+    .purple-box {
+      background-color: purple;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 20px;
+      width: 80%; /* Adjust the width as needed */
+    }
+
+    #project1 p {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    @media (max-width: 768px) {
+      .purple-box {
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .purple-box {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body>
-	<div>
-		<div>
-			<h1>Nelson Y. Mabini Jr</h1>
-			<p><strong>Lab2 Week 3 Activity (CSS EXERCISE)</strong></p>
-			<p><strong>TEKKEN 8 - DRAGUNOV says HI!</strong></p>
-		</div>
+  <div class="purple-box">
+    <h1>Nelson Y. Mabini Jr</h1>
+    <p><strong>Lab2 Week 3 Activity (CSS EXERCISE) My Profile</strong></p>
+    <p><strong>THATS ME VVV</strong></p>
+  </div>
 
-		<h2>Lab2/Week3</h2>
-		<div id="project1">
-			<a href="project.html">
-				<img src="DRGNOV.png" alt="Project Image">
-			<p>Welcome to TEKKEN 8!</p>
-			</a>
-		</div>
-	</div>
+  <h2>Lab2/Week3</h2>
+  <div id="project1" class="purple-box">
+    <a href="project.html">
+      <img src="DRGNOV.png" alt="Project Image">
+      <p>Im Nelson Y. Maabini Jr, student at APC<br>WEBPROG SS221</p>
+    </a>
+  </div>
 </body>
 </html>

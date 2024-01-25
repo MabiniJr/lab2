@@ -21,7 +21,6 @@
             background: url('DSouls.gif') center/cover no-repeat fixed;
         }
 
-        /* Add additional styling for your content */
         h1 {
             color: white;
             text-align: center;
@@ -29,16 +28,28 @@
         }
 
         h2 {
-          color: white;
-          text-align: center;
-          padding-top: 100px;
-      }
+            opacity: 0; 
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+            animation: fadeIn 2s ease-in-out forwards; 
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="background-container">
-        <!-- Your content goes here -->
+       
         <h1>Hello Ashen One!</h1>
         <h2>What do you mean there's "more"?</h2>
     </div>

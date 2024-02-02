@@ -22,17 +22,28 @@
         }
 
         /* Add additional styling for your content */
-        h1 {
+        h1, h2 {
             color: white;
             text-align: center;
-            padding-top: 100px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease forwards;
         }
 
-        h2 {
-          color: white;
-          text-align: center;
-          padding-top: 100px;
-      }
+        h3 {
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        /* Keyframes for the fadeIn animation */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0); /* Move back to the original position */
+            }
+        }
     </style>
 </head>
 
@@ -40,8 +51,15 @@
     <div class="background-container">
         <!-- Your content goes here -->
         <h1>Hello Ashen One!</h1>
-        <h2>What do you mean there's "more"?</h2>
+        <h2>What do you mean "Forms"?</h2>
+        <h3 onclick="redirectToForms()">Why don't you click this?</h3>
     </div>
+
+    <script>
+        function redirectToForms() {
+            window.location.href = 'forms.php';
+        }
+    </script>
 </body>
 
 </html>

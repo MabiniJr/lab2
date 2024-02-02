@@ -45,7 +45,9 @@
       text-align: center;
       margin: 20px;
       width: 80%;
-      display: none; 
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
     }
 
     .game-box {
@@ -73,10 +75,10 @@
       justify-content: space-between;
       width: 80%;
       margin: 20px 0;
-      background-color: rgba(241, 166, 5, 0.877); 
-      border: 2px solid #f3a702; /* Border color */
-      border-radius: 10px; 
-      padding: 20px; 
+      background-color: rgba(241, 166, 5, 0.877);
+      border: 2px solid #f3a702;
+      border-radius: 10px;
+      padding: 20px;
     }
 
     button {
@@ -85,10 +87,18 @@
       padding: 10px 20px;
       margin: 0 10px;
       cursor: pointer;
-      background-color: #f3a702; /* Button background color */
-      color: rgb(0, 0, 0); /* Button text color */
-      border: 10px groove #f3a702; 
-      border-radius: 5px; 
+      background-color: #f3a702;
+      color: rgb(0, 0, 0);
+      border: 10px groove #f3a702;
+      border-radius: 5px;
+    }
+
+    .timer {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      font-size: 18px;
+      color: #ffffff;
     }
     
     @media (max-width: 768px) {
@@ -126,13 +136,16 @@
     <button onclick="seeMore()">See More</button>
   </div>
 
+  <!-- Timer display -->
+  <div class="timer" id="timer"></div>
+
   <section id="about-me">
     <h2>About Me</h2>
-    <p style="font-size: 23px";>Welcome to my personal website! I am Nelson Jr. I enjoy playing lots of gacha games, so I'll showcase some of them here.</p>
+    <p style="font-size: 23px;">Welcome to my personal website! I am Nelson Jr. I enjoy playing lots of gacha games, so I'll showcase some of them here.</p>
   </section>
 
   <!-- Section for "My Games" -->
-  <<section id="my-games" class="game-box">
+  <section id="my-games" class="game-box">
     <h2>My Games</h2>
     <div class="project">
       <a href="https://genshin.hoyoverse.com/en/" target="_blank">
@@ -148,37 +161,56 @@
     <p style="font-size: 28px; font-weight: bold;">Click image to know more</p>
   </section>
 
-  <section id="see-more">
-    <h2>There is no more</h2>
-    <p>Hello "Ashen One"</p>
-  </section>
-
   <footer>
     <p>Nelson Y. Mabini Jr. | Personal Website</p>
   </footer>
 
   <!-- JavaScript Section -->
   <script>
-
     // Function to show the "About Me" section and hide "My Games"
     function showAboutMe() {
-      document.getElementById('about-me').style.display = 'block';
-      document.getElementById('my-games').style.display = 'none';
+      fadeOutAndHide('my-games');
+      fadeIn('about-me');
     }
-  
+
     // Function to show "My Games" section and hide "About Me"
     function showMyGames() {
-      document.getElementById('about-me').style.display = 'none';
-      document.getElementById('my-games').style.display = 'block';
-    
+      fadeOutAndHide('about-me');
+      fadeIn('my-games');
     }
 
     // Function to show "See More" section and hide "About Me"
     function seeMore() {
       window.open('see-more.php', '_blank');
-  }
+    }
+
+    // Function to fade out and hide a section
+    function fadeOutAndHide(sectionId) {
+      const section = document.getElementById(sectionId);
+      section.style.opacity = 0;
+      setTimeout(() => {
+        section.style.display = 'none';
+      }, 500); // Wait for the animation to complete
+    }
+
+    // Function to fade in a section
+    function fadeIn(sectionId) {
+      const section = document.getElementById(sectionId);
+      section.style.display = 'block';
+      setTimeout(() => {
+        section.style.opacity = 1;
+      }, 10); // A small delay to ensure display is set before changing opacity
+    }
+
+    // Timer function
+    function myTimer() {
+      const d = new Date();
+      document.getElementById('timer').innerHTML = d.toLocaleTimeString();
+    }
+
+    // Set interval for the timer to update every second
+    setInterval(myTimer, 1000);
   </script>
 </body>
 
 </html>
-

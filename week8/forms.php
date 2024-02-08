@@ -7,6 +7,7 @@ body {
     margin: 0;
     overflow: hidden;
     background: url('CFire.gif') center/cover no-repeat fixed;
+    color: white; /* Set the default text color to white */
 }
 
 h2 {
@@ -20,6 +21,10 @@ form {
 /* Additional styling for your form elements if needed */
 form input, form textarea, form select {
     color: black; /* Set the color of form input, textarea, and select elements to black */
+}
+
+.result {
+    color: white; /* Set the color of result text to white */
 }
 
 </style>
@@ -107,16 +112,18 @@ function test_input($data) {
 </form>
 
 <?php
-echo "<h2>Your Input:</h2>";
-echo $name;
-echo "<br>";
-echo $email;
-echo "<br>";
-echo $website;
-echo "<br>";
-echo $comment;
-echo "<br>";
-echo $gender;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    echo "<h2 class='result'>Your Input:</h2>";
+    echo "<span class='result'>$name</span>";
+    echo "<br>";
+    echo "<span class='result'>$email</span>";
+    echo "<br>";
+    echo "<span class='result'>$website</span>";
+    echo "<br>";
+    echo "<span class='result'>$comment</span>";
+    echo "<br>";
+    echo "<span class='result'>$gender</span>";
+}
 ?>
 
 </body>

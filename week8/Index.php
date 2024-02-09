@@ -13,8 +13,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+      justify-content: flex-start;
+      min-height: 200vh;
     }
 
     header {
@@ -63,13 +63,25 @@
     }
 
     footer {
-      background-color: #2c3e50;
+      background-color: rgba(241, 166, 5, 0.89);
       padding: 10px;
       text-align: center;
       width: 100%;
     }
 
     
+    #php-basics {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(241, 166, 5, 0.89);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin: 20px;
+    }
+
     .button-container {
       display: flex;
       justify-content: space-between;
@@ -105,7 +117,7 @@
       section {
         width: 90%;
       }
-
+      
       .button-container {
         width: 90%;
       }
@@ -211,6 +223,67 @@
     // Set interval for the timer to update every second
     setInterval(myTimer, 1000);
   </script>
+
+  <!-- PHP Section -->
+  <section id="php-basics">
+  <h2>PHP Basics</h2>
+  <p>Welcome to the PHP Basics section! Below, we'll cover some fundamental concepts in PHP.</p>
+  
+  <h3>1. Variables</h3>
+  <p>Variables in PHP are used to store data. Variable names start with a dollar sign ($) followed by the name.</p>
+  <?php
+    $name = "John";
+    $age = 25;
+    echo "Name: " . $name . "<br>";
+    echo "Age: " . $age;
+  ?>
+  
+  <h3>2. Echo / Print</h3>
+  <p>PHP has two main functions for outputting data: <code>echo</code> and <code>print</code>. Both are used to output strings.</p>
+  <?php
+    echo "Hello, World!<br>";
+    print "This is a print statement.";
+  ?>
+  
+  <h3>3. Data Types</h3>
+  <p>PHP supports various data types including strings, integers, floats, booleans, arrays, and objects.</p>
+  <?php
+    $string = "Hello";
+    $integer = 10;
+    $float = 3.14;
+    $boolean = true;
+    echo "String: " . $string . "<br>";
+    echo "Integer: " . $integer . "<br>";
+    echo "Float: " . $float . "<br>";
+    echo "Boolean: " . ($boolean ? "true" : "false");
+  ?>
+  
+  <h3>4. Operators & Math</h3>
+  <p>PHP supports a range of operators for performing arithmetic, comparison, and logical operations.</p>
+  <?php
+    $x = 10;
+    $y = 5;
+    echo "Addition: " . ($x + $y) . "<br>";
+    echo "Subtraction: " . ($x - $y) . "<br>";
+    echo "Multiplication: " . ($x * $y) . "<br>";
+    echo "Division: " . ($x / $y) . "<br>";
+    echo "Modulus: " . ($x % $y);
+  ?>
+  
+  <h3>5. Conditionals</h3>
+  <p>Conditional statements like <code>if</code>, <code>else</code>, and <code>elseif</code> are used to execute different code blocks based on different conditions.</p>
+  <?php
+    $time = date("H");
+    if ($time < "12") {
+      echo "Good morning!";
+    } elseif ($time < "18") {
+      echo "Good afternoon!";
+    } else {
+      echo "Good evening!";
+    }
+  ?>
+</section>
+
 </body>
 
 </html>

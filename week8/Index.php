@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Nelson's Portfolio</title>
+  <title>Nelson's Web</title>
   <style>
     body {
       font-family: Trebuchet MS, sans-serif;
@@ -14,7 +14,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      min-height: 200vh;
+      min-height: 400vh;
     }
 
     header {
@@ -60,13 +60,6 @@
       border: 5px solid #000000;
       border-radius: 5px;
       margin-bottom: 10px;
-    }
-
-    footer {
-      background-color: rgba(241, 166, 5, 0.89);
-      padding: 10px;
-      text-align: center;
-      width: 100%;
     }
 
     #php-basics {
@@ -168,10 +161,6 @@
     <p style="font-size: 28px; font-weight: bold;">Click image to know more</p>
   </section>
 
-  <footer>
-    <p>Nelson Y. Mabini Jr. | Personal Website</p>
-  </footer>
-
   <!-- PHP Section -->
   <section id="php-basics">
     <h2>PHP Basics</h2>
@@ -240,18 +229,18 @@
       fadeIn('about-me');
     }
 
-    
+    // Function to show "My Games" section and hide "About Me"
     function showMyGames() {
       fadeOutAndHide('about-me');
       fadeIn('my-games');
     }
 
-    
+    // Function to show "See More" section and hide "About Me"
     function seeMore() {
       window.open('see-more.php', '_blank');
     }
 
-  
+    // Function to fade out and hide a section
     function fadeOutAndHide(sectionId) {
       const section = document.getElementById(sectionId);
       section.style.opacity = 0;
@@ -260,13 +249,13 @@
       }, 500); // Wait for the animation to complete
     }
 
-    
+    // Function to fade in a section
     function fadeIn(sectionId) {
       const section = document.getElementById(sectionId);
       section.style.display = 'block';
       setTimeout(() => {
         section.style.opacity = 1;
-      }, 10); 
+      }, 10); // A small delay to ensure display is set before changing opacity
     }
 
     // Timer function
@@ -275,6 +264,7 @@
       document.getElementById('timer').innerHTML = d.toLocaleTimeString();
     }
 
+    // Set interval for the timer to update every second
     setInterval(myTimer, 1000);
   </script>
 

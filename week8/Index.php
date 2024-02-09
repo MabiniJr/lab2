@@ -69,12 +69,7 @@
       width: 100%;
     }
 
-    
     #php-basics {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
       background-color: rgba(241, 166, 5, 0.89);
       padding: 20px;
       border-radius: 10px;
@@ -112,12 +107,12 @@
       font-size: 18px;
       color: #ffffff;
     }
-    
+
     @media (max-width: 768px) {
       section {
         width: 90%;
       }
-      
+
       .button-container {
         width: 90%;
       }
@@ -177,77 +172,30 @@
     <p>Nelson Y. Mabini Jr. | Personal Website</p>
   </footer>
 
-  <!-- JavaScript Section -->
-  <script>
-    // Function to show the "About Me" section and hide "My Games"
-    function showAboutMe() {
-      fadeOutAndHide('my-games');
-      fadeIn('about-me');
-    }
-
-    // Function to show "My Games" section and hide "About Me"
-    function showMyGames() {
-      fadeOutAndHide('about-me');
-      fadeIn('my-games');
-    }
-
-    // Function to show "See More" section and hide "About Me"
-    function seeMore() {
-      window.open('see-more.php', '_blank');
-    }
-
-    // Function to fade out and hide a section
-    function fadeOutAndHide(sectionId) {
-      const section = document.getElementById(sectionId);
-      section.style.opacity = 0;
-      setTimeout(() => {
-        section.style.display = 'none';
-      }, 500); // Wait for the animation to complete
-    }
-
-    // Function to fade in a section
-    function fadeIn(sectionId) {
-      const section = document.getElementById(sectionId);
-      section.style.display = 'block';
-      setTimeout(() => {
-        section.style.opacity = 1;
-      }, 10); // A small delay to ensure display is set before changing opacity
-    }
-
-    // Timer function
-    function myTimer() {
-      const d = new Date();
-      document.getElementById('timer').innerHTML = d.toLocaleTimeString();
-    }
-
-    // Set interval for the timer to update every second
-    setInterval(myTimer, 1000);
-  </script>
-
   <!-- PHP Section -->
   <section id="php-basics">
-  <h2>PHP Basics</h2>
-  <p>Welcome to the PHP Basics section! Below, we'll cover some fundamental concepts in PHP.</p>
-  
-  <h3>1. Variables</h3>
-  <p>Variables in PHP are used to store data. Variable names start with a dollar sign ($) followed by the name.</p>
-  <?php
+    <h2>PHP Basics</h2>
+    <p>Welcome to the PHP Basics section! I'll show some examples</p>
+
+    <h3>1. Variables</h3>
+    <p>Variables in PHP are used to store data. Variable names start with a dollar sign ($) followed by the name.</p>
+    <?php
     $name = "John";
     $age = 25;
     echo "Name: " . $name . "<br>";
     echo "Age: " . $age;
-  ?>
-  
-  <h3>2. Echo / Print</h3>
-  <p>PHP has two main functions for outputting data: <code>echo</code> and <code>print</code>. Both are used to output strings.</p>
-  <?php
+    ?>
+
+    <h3>2. Echo / Print</h3>
+    <p>PHP has two main functions for outputting data: <code>echo</code> and <code>print</code>. Both are used to output strings.</p>
+    <?php
     echo "Hello, World!<br>";
     print "This is a print statement.";
-  ?>
-  
-  <h3>3. Data Types</h3>
-  <p>PHP supports various data types including strings, integers, floats, booleans, arrays, and objects.</p>
-  <?php
+    ?>
+
+    <h3>3. Data Types</h3>
+    <p>PHP supports various data types including strings, integers, floats, booleans, arrays, and objects.</p>
+    <?php
     $string = "Hello";
     $integer = 10;
     $float = 3.14;
@@ -256,11 +204,11 @@
     echo "Integer: " . $integer . "<br>";
     echo "Float: " . $float . "<br>";
     echo "Boolean: " . ($boolean ? "true" : "false");
-  ?>
-  
-  <h3>4. Operators & Math</h3>
-  <p>PHP supports a range of operators for performing arithmetic, comparison, and logical operations.</p>
-  <?php
+    ?>
+
+    <h3>4. Operators & Math</h3>
+    <p>PHP supports a range of operators for performing arithmetic, comparison, and logical operations.</p>
+    <?php
     $x = 10;
     $y = 5;
     echo "Addition: " . ($x + $y) . "<br>";
@@ -268,11 +216,11 @@
     echo "Multiplication: " . ($x * $y) . "<br>";
     echo "Division: " . ($x / $y) . "<br>";
     echo "Modulus: " . ($x % $y);
-  ?>
-  
-  <h3>5. Conditionals</h3>
-  <p>Conditional statements like <code>if</code>, <code>else</code>, and <code>elseif</code> are used to execute different code blocks based on different conditions.</p>
-  <?php
+    ?>
+
+    <h3>5. Conditionals</h3>
+    <p>Conditional statements like <code>if</code>, <code>else</code>, and <code>elseif</code> are used to execute different code blocks based on different conditions.</p>
+    <?php
     $time = date("H");
     if ($time < "12") {
       echo "Good morning!";
@@ -281,8 +229,54 @@
     } else {
       echo "Good evening!";
     }
-  ?>
-</section>
+    ?>
+  </section>
+
+  <!-- JavaScript Section -->
+  <script>
+    // Function to show the "About Me" section and hide "My Games"
+    function showAboutMe() {
+      fadeOutAndHide('my-games');
+      fadeIn('about-me');
+    }
+
+    
+    function showMyGames() {
+      fadeOutAndHide('about-me');
+      fadeIn('my-games');
+    }
+
+    
+    function seeMore() {
+      window.open('see-more.php', '_blank');
+    }
+
+  
+    function fadeOutAndHide(sectionId) {
+      const section = document.getElementById(sectionId);
+      section.style.opacity = 0;
+      setTimeout(() => {
+        section.style.display = 'none';
+      }, 500); // Wait for the animation to complete
+    }
+
+    
+    function fadeIn(sectionId) {
+      const section = document.getElementById(sectionId);
+      section.style.display = 'block';
+      setTimeout(() => {
+        section.style.opacity = 1;
+      }, 10); 
+    }
+
+    // Timer function
+    function myTimer() {
+      const d = new Date();
+      document.getElementById('timer').innerHTML = d.toLocaleTimeString();
+    }
+
+    setInterval(myTimer, 1000);
+  </script>
 
 </body>
 

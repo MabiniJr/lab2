@@ -238,6 +238,10 @@
     ?>
   </section>
 
+  <footer>
+    <p>Nelson Y. Mabini Jr. | Personal Website</p>
+  </footer>
+
   <!-- JavaScript Section -->
   <script>
     // Function to show the "About Me" section and hide "My Games"

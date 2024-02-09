@@ -1,9 +1,4 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "myDB";
-
 // apcwebprog config
 $servername = "localhost";
 $username = "webprogss221";

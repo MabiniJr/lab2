@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Nelson's Web</title>
+  <title>Nelson's Portfolio</title>
   <style>
     body {
       font-family: Trebuchet MS, sans-serif;
@@ -14,7 +14,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      min-height: 400vh;
+      min-height: 200vh;
     }
 
     header {
@@ -34,7 +34,11 @@
       border-radius: 10px;
     }
 
-    h1, h2, h3, p, strong {
+    h1,
+    h2,
+    h3,
+    p,
+    strong {
       color: #000000;
     }
 
@@ -62,7 +66,19 @@
       margin-bottom: 10px;
     }
 
+    footer {
+      background-color: rgba(241, 166, 5, 0.89);
+      padding: 10px;
+      text-align: center;
+      width: 100%;
+    }
+
+
     #php-basics {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
       background-color: rgba(241, 166, 5, 0.89);
       padding: 20px;
       border-radius: 10px;
@@ -133,18 +149,19 @@
   <div class="button-container">
     <button onclick="showAboutMe()">About Me</button>
     <button onclick="showMyGames()">My Games</button>
-    <button onclick="seeMore()">See More</button>
+    <button onclick="showPhpSamples()">PHP Samples</button> <!-- Added PHP Samples button -->
   </div>
 
   <!-- Timer display -->
   <div class="timer" id="timer"></div>
 
+  <!-- About Me section -->
   <section id="about-me">
     <h2>About Me</h2>
     <p style="font-size: 23px;">Welcome to my personal website! I am Nelson Jr. I enjoy playing lots of gacha games, so I'll showcase some of them here.</p>
   </section>
 
-  <!-- Section for "My Games" -->
+  <!-- My Games section -->
   <section id="my-games" class="game-box">
     <h2>My Games</h2>
     <div class="project">
@@ -162,7 +179,7 @@
   </section>
 
   <!-- PHP Section -->
-  <section id="php-basics">
+  <section id="php-samples" style="display: none;">
     <h2>PHP Basics</h2>
     <p>Welcome to the PHP Basics section! I'll show some examples</p>
 
@@ -227,17 +244,21 @@
     function showAboutMe() {
       fadeOutAndHide('my-games');
       fadeIn('about-me');
+      fadeOutAndHide('php-samples'); // Hide PHP Samples if it's visible
     }
 
     // Function to show "My Games" section and hide "About Me"
     function showMyGames() {
       fadeOutAndHide('about-me');
       fadeIn('my-games');
+      fadeOutAndHide('php-samples'); // Hide PHP Samples if it's visible
     }
 
-    // Function to show "See More" section and hide "About Me"
-    function seeMore() {
-      window.open('see-more.php', '_blank');
+    // Function to show "PHP Samples" section and hide other sections
+    function showPhpSamples() {
+      fadeOutAndHide('about-me');
+      fadeOutAndHide('my-games');
+      fadeIn('php-samples');
     }
 
     // Function to fade out and hide a section
@@ -267,7 +288,6 @@
     // Set interval for the timer to update every second
     setInterval(myTimer, 1000);
   </script>
-
 </body>
 
 </html>
